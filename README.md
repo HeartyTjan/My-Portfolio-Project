@@ -1,6 +1,6 @@
-# 🚀 Sleek Portfolio Forge - Modern Developer Portfolio
+# 🚀 HeartyTjan - Modern Developer Portfolio
 
-A lightning-fast, modern portfolio website built with React, TypeScript, and Supabase. Optimized for recruiters with instant content display and seamless performance.
+A lightning-fast, modern portfolio website built with React, TypeScript, and Supabase. 
 
 ![Portfolio Preview](https://img.shields.io/badge/Status-Production%20Ready-brightgreen)
 ![React](https://img.shields.io/badge/React-18.0-blue)
@@ -15,7 +15,6 @@ A lightning-fast, modern portfolio website built with React, TypeScript, and Sup
 - **Three.js Background**: Interactive 3D background animations
 - **Responsive Design**: Perfect on all devices
 - **Smooth Animations**: CSS transitions and micro-interactions
-- **Dark/Light Mode**: Built-in theme support
 
 ### 📊 **Portfolio Sections**
 - **Hero Section**: Eye-catching introduction with call-to-action
@@ -117,7 +116,6 @@ npm run dev
 yarn dev
 ```
 
-Visit `http://localhost:5173` to see your portfolio!
 
 ## 🏗️ Project Structure
 
@@ -185,19 +183,6 @@ VITE_SUPABASE_ANON_KEY=your_anon_key
 VITE_ENABLE_PERFORMANCE_MONITORING=true
 ```
 
-## 📊 Performance Monitoring
-
-### **Development Metrics**
-Performance metrics are logged in development mode:
-```
-⏱️ portfolio_data_fetch: 245.32ms
-⏱️ cache_hit_rate: 85.7%
-```
-
-### **Production Monitoring**
-- **Web Vitals**: Core Web Vitals tracking
-- **Error Tracking**: Performance issue detection
-- **Analytics**: User interaction metrics
 
 ## 🔧 Advanced Configuration
 
