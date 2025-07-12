@@ -70,7 +70,7 @@ export default function Projects() {
                     </Badge>
                   ))}
                 </div>
-                <div className="flex gap-2">
+                <div className="flex justify-center flex-wrap gap-2">
                   {project.github_url && (
                     <Button size="sm" variant="outline" asChild>
                       <a href={project.github_url} target="_blank" rel="noopener noreferrer">
