@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HeartyTjan - Portfolio</title>
+    <meta name="description" content="A modern portfolio website showcasing projects, skills, and experience" />
+    <meta name="author" content="Portfolio Owner" />
+
+    <link rel="icon" type="image/jpeg" href="/Tj_profile_pics.jpg" />
+    <link rel="shortcut icon" type="image/jpeg" href="/Tj_profile_pics.jpg" />
+
+    <meta property="og:title" content="HeartyTjan - Portfolio" />
+    <meta property="og:description" content="A modern portfolio website showcasing projects, skills, and experience" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/Tj_profile_pics.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@portfolio" />
+    <meta name="twitter:image" content="/Tj_profile_pics.jpg" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Register service worker for caching
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>
