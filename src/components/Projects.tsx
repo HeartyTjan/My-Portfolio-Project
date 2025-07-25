@@ -41,56 +41,52 @@ export default function Projects() {
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {displayProjects.map((project) => (
-            <Card key={project.id} className="group hover:shadow-lg transition-shadow overflow-hidden">
+            <Card key={project.id} className="group hover:shadow-2xl transition-shadow overflow-hidden rounded-2xl border-0 bg-white/90">
               {project.image_url && (
-                <div className="aspect-video overflow-hidden">
+                <div className="relative w-full aspect-[2/1] overflow-hidden">
                   <img
                     src={project.image_url}
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-4">
+                    <h3 className="text-2xl font-bold text-white drop-shadow-lg">{project.title}</h3>
+                    {project.featured && (
+                      <Badge variant="secondary" className="mt-2 bg-yellow-400/90 text-black font-semibold px-3 py-1 rounded-full w-fit">Featured</Badge>
+                    )}
+                  </div>
                 </div>
               )}
-              <CardHeader>
-                <CardTitle className="flex items-center justify-between">
-                  {project.title}
-                  {project.featured && (
-                    <Badge variant="secondary">Featured</Badge>
-                  )}
-                </CardTitle>
-                <CardDescription className="line-clamp-3">
-                  {project.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex flex-wrap gap-2">
+              <CardContent className="space-y-6 p-6">
+                <CardDescription className="text-lg text-gray-700 mb-2 min-h-[48px]">{project.description}</CardDescription>
+                <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech_stack?.map((tech) => (
-                    <Badge key={tech} variant="outline" className="text-xs">
+                    <Badge key={tech} variant="outline" className="text-xs px-3 py-1 rounded-full bg-gray-100 border-gray-300 shadow-sm">
                       {tech}
                     </Badge>
                   ))}
                 </div>
-                <div className="flex justify-center flex-wrap gap-2">
+                <div className="flex justify-center flex-wrap gap-4 mt-4">
                   {project.github_url && (
-                    <Button size="sm" variant="outline" asChild>
+                    <Button size="lg" variant="outline" asChild className="transition-all shadow hover:shadow-lg border-2 border-gray-300 hover:border-primary text-gray-800 hover:text-primary bg-white">
                       <a href={project.github_url} target="_blank" rel="noopener noreferrer">
-                        <Github className="w-4 h-4 mr-2" />
+                        <Github className="w-5 h-5 mr-2" />
                         Code
                       </a>
                     </Button>
                   )}
                   {project.live_url && (
-                    <Button size="sm" asChild>
+                    <Button size="lg" asChild className="transition-all shadow hover:shadow-lg bg-primary text-white hover:bg-primary/90">
                       <a href={project.live_url} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="w-4 h-4 mr-2" />
+                        <ExternalLink className="w-5 h-5 mr-2" />
                         Live Demo
                       </a>
                     </Button>
                   )}
                   {(project as any).video_url && (
-                    <Button size="sm" variant="outline" asChild>
+                    <Button size="lg" variant="outline" asChild className="transition-all shadow hover:shadow-lg border-2 border-gray-300 hover:border-primary text-gray-800 hover:text-primary bg-white">
                       <a href={(project as any).video_url} target="_blank" rel="noopener noreferrer">
-                        <Play className="w-4 h-4 mr-2" />
+                        <Play className="w-5 h-5 mr-2" />
                         Video
                       </a>
                     </Button>

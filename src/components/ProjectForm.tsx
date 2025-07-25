@@ -116,7 +116,7 @@ export default function ProjectForm({ project, onClose }: ProjectFormProps) {
     try {
       let result;
       if (project) {
-        result = await updateProject(project.id, formData);
+        result = await updateProject({ id: project.id, updates: formData });
       } else {
         result = await addProject(formData);
       }
